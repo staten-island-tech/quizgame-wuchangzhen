@@ -2,11 +2,19 @@ import {
   randomInteger,
   threeDigitInt,
   twoDigitInt,
-  oneDigitInt,
+  questionType,
+  addition,
+  subtraction,
+  multiplication,
+  division,
 } from "./Functions";
 
-console.log(randomInteger(100, 1000));
-console.log(threeDigitInt());
-console.log(twoDigitInt());
+import {} from "./Dom";
 
-console.log("Bonjour");
+let questionCounter = 1;
+
+while (questionCounter <= 5) {
+  questionType();
+  questionCounter += 1;
+  console.log(questionCounter);
+}
