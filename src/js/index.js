@@ -1,20 +1,15 @@
 import {
   randomInteger,
   threeDigitInt,
-  twoDigitInt,
-  questionType,
+  questionCounter,
+  pickQuestion,
   addition,
   subtraction,
   multiplication,
   division,
+  newQuestion,
 } from "./Functions";
 
 import { DOMSelectors } from "./Dom";
 
-let questionCounter = 1;
-
-while (questionCounter <= 5) {
-  questionType();
-  questionCounter += 1;
-  console.log(questionCounter);
-}
+newQuestion();
