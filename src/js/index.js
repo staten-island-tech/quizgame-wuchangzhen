@@ -9,7 +9,7 @@ import {
   division,
 } from "./Functions";
 
-import {} from "./Dom";
+import { DOMSelectors } from "./Dom";
 
 let questionCounter = 1;
 

@@ -1,3 +1,57 @@
-body {
-  background-color: blue;
+@import "_variables.scss";
+@import "_mixins.scss";
+
+.header {
+  background-color: color(light-blue);
+  height: 15vh;
+  @include flex-col-center;
+}
+.header-textbox {
+  height: 100%;
+  display: block;
+  @include flex-row-center;
+}
+.header-text {
+  color: color(light-gray);
+  margin: 0;
+  text-align: center;
+  font-size: 5rem;
+}
+
+.quiz-game {
+  height: 85vh;
+  @include flex-col-center;
+}
+
+.question-number-textbox {
+  margin: 2rem;
+  display: block;
+  position: absolute;
+  $circle-diameter: 7rem;
+  height: $circle-diameter;
+  width: $circle-diameter;
+  border-radius: 50%;
+  background-color: color(light-green);
+}
+
+.question-number {
+  margin: 0rem;
+  position: relative;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(0%, -50%);
+  text-align: center;
+  font-size: 4rem;
+}
+//sda
+
+.question-container {
+  @include flex-row-center;
+  top: 50%;
+  bottom: 50%;
+  position: absolute;
+}
+
+.number {
+  font-size: 10rem;
 }
