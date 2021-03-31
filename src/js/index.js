@@ -1,15 +1,15 @@
 import {
   randomInteger,
+  randomIntegerNoDifficulty,
   threeDigitInt,
-  questionCounter,
+  variables,
   pickQuestion,
   addition,
   subtraction,
   multiplication,
   division,
-  newQuestion,
 } from "./Functions";
 
 import { DOMSelectors } from "./Dom";
 
-newQuestion();
+pickQuestion();

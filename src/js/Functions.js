@@ -1,14 +1,23 @@
 import { DOMSelectors } from "./Dom";
 
 // (min,max) is both inclusive
-function randomInteger(min, max, difficulty = 1) {
-  return Math.floor((Math.random() * (max - min + 1) + min) * difficulty);
+function randomInteger(min, max) {
+  return Math.floor(
+    (Math.random() * (max - min + 1) + min) *
+      2 ** (0.125 * (variables.questionCounter - 1))
+  );
 }
-function threeDigitInt(difficulty = 1) {
-  return randomInteger(100, 999, difficulty);
+function randomIntegerNoDifficulty(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
-function pickQuestion(difficulty = 1) {
-  switch (randomInteger(1, 4, difficulty)) {
+function threeDigitInt() {
+  return randomInteger(100, 999);
+}
+
+const variables = { questionCounter: 1, num1: "", op: "", num2: "", ans: "" };
+
+function pickQuestion() {
+  switch (randomIntegerNoDifficulty(1, 4)) {
     case 1:
       addition();
       break;
@@ -22,60 +31,56 @@ function pickQuestion(difficulty = 1) {
       division();
       break;
   }
+  replaceHTML();
 }
-
-let questionCounter = 1;
-const difficulty = (questionCounter - 1) / 10 + 1;
 
 function addition() {
-  let num1 = threeDigitInt(difficulty);
-  let num2 = threeDigitInt(difficulty);
-  let answer = num1 + num2;
-
-  replaceHTML(num1, num2, "+");
+  variables.num1 = threeDigitInt();
+  variables.op = "+";
+  variables.num2 = threeDigitInt();
+  variables.ans = variables.num1 + variables.num2;
 }
 function subtraction() {
-  let num2 = threeDigitInt(difficulty);
-  let answer = threeDigitInt(difficulty);
-  let num1 = answer + num2;
-
-  replaceHTML(num1, num2, "-");
+  variables.num2 = threeDigitInt();
+  variables.op = "-";
+  variables.ans = threeDigitInt();
+  variables.num1 = variables.ans + variables.num2;
 }
 function multiplication() {
-  let num1 = threeDigitInt(difficulty);
-  let num2 = randomInteger(2, 9, difficulty);
-  let answer = num1 * num2;
-
-  replaceHTML(num1, num2, "×");
+  variables.num1 = threeDigitInt();
+  variables.op = "×";
+  variables.num2 = randomInteger(2, 9);
+  variables.ans = variables.num1 * variables.num2;
 }
 function division() {
-  let num2 = randomInteger(2, 9, difficulty);
-  let answer = threeDigitInt(difficulty);
-  let num1 = answer * num2;
-
-  replaceHTML(num1, num2, "÷");
+  variables.num2 = randomInteger(2, 9);
+  variables.op = "÷";
+  variables.ans = threeDigitInt();
+  variables.num1 = variables.ans * variables.num2;
 }
 
-function replaceHTML(number1, number2, operator) {
-  DOMSelectors.questionNumber.innerHTML = `${questionCounter}`;
-  DOMSelectors.num1.innerHTML = `${number1}`;
-  DOMSelectors.op.innerHTML = `${operator}`;
-  DOMSelectors.num2.innerHTML = `${number2}`;
-}
+function replaceHTML() {
+  DOMSelectors.questionNumber.innerHTML = `${variables.questionCounter}`;
+  DOMSelectors.num1.innerHTML = `${variables.num1}`;
+  DOMSelectors.op.innerHTML = `${variables.op}`;
+  DOMSelectors.num2.innerHTML = `${variables.num2}`;
 
-function newQuestion() {
-  pickQuestion();
-  questionCounter++;
+  DOMSelectors.form.addEventListener("input", function () {
+    if (DOMSelectors.form.value == variables.ans) {
+      DOMSelectors.form.value = "";
+      variables.questionCounter++;
+      pickQuestion();
+    }
+  });
 }
-
 export {
   randomInteger,
+  randomIntegerNoDifficulty,
   threeDigitInt,
-  questionCounter,
+  variables,
   pickQuestion,
   addition,
   subtraction,
   multiplication,
   division,
-  newQuestion,
 };
