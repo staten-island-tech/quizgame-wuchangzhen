@@ -1,0 +1,82 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+.header {
+  background-color: color(light-blue);
+  height: 15vh;
+  min-height: 7rem;
+  @include flex-col-center;
+}
+.header-textbox {
+  height: 100%;
+  display: block;
+  @include flex-row-center;
+}
+.header-text {
+  color: color(light-gray);
+  margin: 0;
+  text-align: center;
+  font-size: 5rem;
+}
+
+.quiz-game {
+  height: 85vh;
+  @include flex-col-center;
+}
+
+.question-number-textbox {
+  margin: 2rem;
+  display: block;
+  position: absolute;
+  top: 15%;
+  $circle-diameter: 7rem;
+  height: $circle-diameter;
+  width: $circle-diameter;
+  border-radius: 50%;
+  background-color: color(light-green);
+}
+
+.question-number {
+  margin: 0rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 4rem;
+}
+
+.question-container {
+  @include flex-row-center;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.number {
+  font-size: 8rem;
+  margin: 0rem;
+}
+
+.answer-field {
+  font-size: 8rem;
+  width: 20vw;
+}
+
+.timer-container {
+  position: absolute;
+  top: 85%;
+  width: 50vw;
+  height: 5rem;
+  background-color: black;
+}
+
+.timer {
+  text-align: center;
+  font-size: 4rem;
+  color: white;
+}

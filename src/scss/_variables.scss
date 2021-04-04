@@ -1,0 +1,24 @@
+$phone: 767px;
+$tablet: 991px;
+$laptop: 1199px;
+
+html,
+body {
+  font-size: 62.5%;
+  font-family: sans-serif;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$colors: (
+  light-blue: #81d4fa,
+  light-gray: #e0e0e0,
+  light-red: #ef5350,
+  light-green: #81c784,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
