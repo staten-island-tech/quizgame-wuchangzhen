@@ -92,7 +92,7 @@ body {
   left: 0.5rem;
   top: 0.5rem;
   bottom: 0.5rem;
-  width: calc(const(--width, 0) * 1%);
+  width: calc(const(--width, 0) * 1%); //calculates width based on the changing --width attribute
   min-width: 2rem;
   max-width: calc(100% - 1rem);
   background-color: color(light-blue);

@@ -8,6 +8,6 @@ setInterval(() => {
   const width = parseFloat(computedStyle.getPropertyValue('--width')) || 0;
   //once page loads,no width supplied, not a number, defaulted to 0
   timerBar.style.setProperty('--width', width + 0.1);
-}, 15); //calls on function every 5 seconds
+}, 15); //calls on function every 15 seconds
 
 //parseFloat converts string to number, but why is this necessary?>????
