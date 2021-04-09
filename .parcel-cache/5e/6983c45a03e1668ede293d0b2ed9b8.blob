@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="a60f8e0cde6a6effe90044aab8273e00">
+    <link rel="shortcut icon" href="077ad771d8ef3214840a4ff49b1a43c7">
+    <title>Math Quiz Game</title>
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div class="header-textbox">
+        <h1 class="header-text">Math Quiz Game</h1>
+      </div>
+    </header>
+    <section class="quiz-game">
+      <div class="question-number-textbox">
+        <h1 class="question-number">1</h1>
+      </div>
+      <div class="question-container">
+        <h1 class="first-number number">123</h1>
+        <h1 class="operator number">×</h1>
+        <h1 class="second-number number">321</h1>
+        <h1 class="equals number">=</h1>
+        <input type="number" class="answer-field">
+      </div>
+      <div class="divCountdownBar" onclick="initBarCount()">
+        <div class="divTimeLeft"></div>
+      </div>
+    </section>
+    <script src="06dfe9f8db92a79f21cf80f953a0a070"></script>
+  </body>
+</html>
