@@ -1,6 +1,6 @@
 import { DOMSelectors } from './Dom';
 
-//basically a div over another div thats disappearing over the span of a specified length of time
+/* //basically a div over another div thats disappearing over the span of a specified length of time
 
 const timerBar = document.querySelector('timerBar');
 setInterval(() => {
@@ -11,3 +11,22 @@ setInterval(() => {
 }, 15); //calls on function every 15 seconds
 
 //parseFloat converts string to number, but why is this necessary?>????
+ */
+
+const timer = document.querySelector('.timer');
+const timeSecond = 5;
+
+timer.innerHTML = `00:${timeSecond}`;
+
+const countDown = setInterval(() => {
+  timeSecond--;
+  displayTime(timeSecond);
+  if (timeSecond <= 0 || timeSecond < 1) {
+    clearInterval(countDown);
+  }
+}, 1000);
+
+function displayTime(second) {
+  const min = second / 60;
+  const sec = second % 60;
+}

@@ -442,8 +442,8 @@ id) /*: string*/
 }
 
 },{}],"3L8AI":[function(require,module,exports) {
-var _Functions = require("./Functions");
-require("./Dom");
+var _Functions = require('./Functions');
+require('./Dom');
 _Functions.pickQuestion();
 
 },{"./Functions":"4Blfm","./Dom":"5Nh5r"}],"4Blfm":[function(require,module,exports) {
@@ -556,11 +556,12 @@ _parcelHelpers.export(exports, "DOMSelectors", function () {
   return DOMSelectors;
 });
 const DOMSelectors = {
-  questionNumber: document.querySelector(".question-number"),
-  num1: document.querySelector(".first-number"),
-  op: document.querySelector(".operator"),
-  num2: document.querySelector(".second-number"),
-  form: document.querySelector(".answer-field")
+  questionNumber: document.querySelector('.question-number'),
+  num1: document.querySelector('.first-number'),
+  op: document.querySelector('.operator'),
+  num2: document.querySelector('.second-number'),
+  form: document.querySelector('.answer-field'),
+  timer: document.querySelector('.timer')
 };
 
 },{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5gA8y":[function(require,module,exports) {

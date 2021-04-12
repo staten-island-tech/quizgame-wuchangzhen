@@ -71,7 +71,14 @@ body {
   width: 20vw;
 }
 
-//This countdown bar takes advantage of a lot of css ex: ::before, ::after that create pseudo-elements
+.timer {
+  position: absolute;
+  top: 65%;
+  align-items: center;
+  font-size: 6rem;
+  font-weight: bold;
+}
+/* //This countdown bar takes advantage of a lot of css ex: ::before, ::after that create pseudo-elements
 .timerBar {
   position: absolute;
   top: 85%;
@@ -79,10 +86,10 @@ body {
   height: 5rem;
   background-color: black;
   border-radius: 2.5rem;
-  color: white;
+  color: white; 
 }
 
-//new element that takes place right at the beginning of the progress bar
+/* //new element that takes place right at the beginning of the progress bar
 .timerBar::before {
   //content for data-label attribute
   content: attr(data-label);
@@ -98,4 +105,4 @@ body {
   background-color: color(light-blue);
   border-radius: 2rem;
   padding: 2rem;
-}
+} */
