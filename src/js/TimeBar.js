@@ -47,4 +47,4 @@ function replaceHTMLTest() {
   DOMSelectors.timer.innerHTML = `00:${timeSecond}`;
 }
 
-export { replaceHTMLTest, displayTime };
+export { replaceHTMLTest, displayTime, endTime };
