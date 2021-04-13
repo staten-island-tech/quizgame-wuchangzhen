@@ -10,6 +10,8 @@ import {
   division,
 } from './Functions';
 
+import { replaceHTMLTest, displayTime } from './TimeBar';
+
 import { DOMSelectors } from './Dom';
 
 pickQuestion();

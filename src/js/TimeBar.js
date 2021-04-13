@@ -13,10 +13,15 @@ setInterval(() => {
 //parseFloat converts string to number, but why is this necessary?>????
  */
 
-const timer = document.querySelector('.timer');
-const timeSecond = 5;
+//const timer = document.querySelector('.timer');
+//const timeSecond = 5;
 
-timer.innerHTML = `00:${timeSecond}`;
+//const timer = docuument.querySelector('h1');
+let timeSecond = 70;
+
+DOMSelectors.timer.innerHTML = `00:${timeSecond}`; //makes direct changes to .timer div
+
+displayTime(timeSecond);
 
 const countDown = setInterval(() => {
   timeSecond--;
@@ -27,6 +32,19 @@ const countDown = setInterval(() => {
 }, 1000);
 
 function displayTime(second) {
-  const min = second / 60;
-  const sec = second % 60;
+  const min = Math.floor(second / 60);
+  const sec = Math.floor(second % 60);
+  DomSelectors.timer.innerHTML = `${min < 10 ? '0' : ''}${min}:${
+    sec < 10 ? '0' : ''
+  }${sec}`;
 }
+
+function endTime() {
+  DomSelectors.timer.innerHTML = 'YUR DONE!';
+}
+
+function replaceHTMLTest() {
+  DOMSelectors.timer.innerHTML = `00:${timeSecond}`;
+}
+
+export { replaceHTMLTest, displayTime };
