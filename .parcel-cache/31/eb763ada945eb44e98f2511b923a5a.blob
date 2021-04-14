@@ -1,3 +1,0 @@
-var _Functions = require("./Functions");
-require("./Dom");
-_Functions.pickQuestion();

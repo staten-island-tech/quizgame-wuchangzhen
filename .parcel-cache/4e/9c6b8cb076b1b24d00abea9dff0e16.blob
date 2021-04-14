@@ -1,4 +1,0 @@
-var _Functions = require('./Functions');
-require('./TimeBar');
-require('./Dom');
-_Functions.pickQuestion();
