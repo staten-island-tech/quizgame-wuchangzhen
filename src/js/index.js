@@ -8,8 +8,10 @@ import {
   subtraction,
   multiplication,
   division,
-} from "./Functions";
+} from './Functions';
 
-import { DOMSelectors } from "./Dom";
+import { /*replaceHTMLTest,*/ displayTime, endTime } from './TimeBar';
+
+import { DOMSelectors } from './Dom';
 
 pickQuestion();
