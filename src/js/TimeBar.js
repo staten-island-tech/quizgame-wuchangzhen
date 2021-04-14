@@ -17,16 +17,17 @@ setInterval(() => {
 //const timeSecond = 5;
 
 //const timer = docuument.querySelector('h1');
-let timeSecond = 70;
-
-DOMSelectors.timer.innerHTML = `00:${timeSecond}`; //makes direct changes to .timer div
+let timeSecond = 60;
 
 displayTime(timeSecond);
+
+DOMSelectors.timer.innerHTML = `00:${timeSecond}`; //makes direct changes to .timer div
 
 const countDown = setInterval(() => {
   timeSecond--;
   displayTime(timeSecond);
   if (timeSecond <= 0 || timeSecond < 1) {
+    endTime();
     clearInterval(countDown);
   }
 }, 1000);

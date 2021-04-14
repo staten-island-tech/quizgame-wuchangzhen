@@ -10,7 +10,7 @@ import {
   division,
 } from './Functions';
 
-import { replaceHTMLTest, displayTime } from './TimeBar';
+import { replaceHTMLTest, displayTime, endTime } from './TimeBar';
 
 import { DOMSelectors } from './Dom';
 
