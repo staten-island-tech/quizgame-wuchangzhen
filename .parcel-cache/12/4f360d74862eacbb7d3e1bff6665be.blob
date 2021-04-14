@@ -1,4 +1,4 @@
-import { DOMSelectors } from './Dom';
+/* import { DOMSelectors } from './Dom'; */
 
 /* //basically a div over another div thats disappearing over the span of a specified length of time
 
@@ -17,7 +17,7 @@ setInterval(() => {
 //const timeSecond = 5;
 
 //const timer = docuument.querySelector('h1');
-let timeSecond = 60;
+/* let timeSecond = 60;
 
 DOMSelectors.timer.innerHTML = `00:${timeSecond}`; //makes direct changes to .timer div
 
@@ -42,10 +42,11 @@ function endTime() {
   DomSelectors.timer.innerHTML = 'YUR DONE!';
 }
 
-/* function replaceHTMLTest() {
+function replaceHTMLTest() {
   DOMSelectors.timer.innerHTML = `00:${timeSecond}`;
-} */
+}
 
 displayTime(timeSecond);
 
-export { /* replaceHTMLTest, */ displayTime, endTime };
+export { replaceHTMLTest, displayTime, endTime };
+ */

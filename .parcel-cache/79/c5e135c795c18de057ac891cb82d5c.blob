@@ -447,7 +447,7 @@ require('./TimeBar');
 require('./Dom');
 _Functions.pickQuestion();
 
-},{"./Functions":"4Blfm","./Dom":"5Nh5r","./TimeBar":"6E1HU"}],"4Blfm":[function(require,module,exports) {
+},{"./Functions":"4Blfm","./TimeBar":"6E1HU","./Dom":"5Nh5r"}],"4Blfm":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 _parcelHelpers.export(exports, "randomInteger", function () {
@@ -610,6 +610,9 @@ exports.export = function (dest, destName, get) {
 },{}],"6E1HU":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "replaceHTMLTest", function () {
+  return replaceHTMLTest;
+});
 _parcelHelpers.export(exports, "displayTime", function () {
   return displayTime;
 });
@@ -651,11 +654,11 @@ function displayTime(second) {
 function endTime() {
   DomSelectors.timer.innerHTML = 'YUR DONE!';
 }
-/*function replaceHTMLTest() {
-DOMSelectors.timer.innerHTML = `00:${timeSecond}`;
-}*/
+function replaceHTMLTest() {
+  _Dom.DOMSelectors.timer.innerHTML = `00:${timeSecond}`;
+}
 displayTime(timeSecond);
 
 },{"./Dom":"5Nh5r","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}]},["21c8X","3L8AI"], "3L8AI", "parcelRequire0698")
 
-//# sourceMappingURL=index.2142d36c.js.map
+//# sourceMappingURL=index.HASH_REF_062e9a7565ca912a5f7d6b832142d36c.js.map
