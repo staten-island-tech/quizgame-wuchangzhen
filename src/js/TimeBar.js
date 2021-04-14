@@ -37,13 +37,13 @@ const countDown = setInterval(() => {
 function displayTime(second) {
   const min = Math.floor(second / 60);
   const sec = Math.floor(second % 60);
-  DomSelectors.timer.innerHTML = `${min < 10 ? '0' : ''}${min}:${
+  DOMSelectors.timer.innerHTML = `${min < 10 ? '0' : ''}${min}:${
     sec < 10 ? '0' : ''
   }${sec}`; // if min is less than 10 then 0, if not then nothing --> same thing with sec
 }
 
 function endTime() {
-  DomSelectors.timer.innerHTML = 'YUR DONE!';
+  DOMSelectors.timer.innerHTML = 'YUR DONE!';
 }
 
 /* function replaceHTMLTest() {
