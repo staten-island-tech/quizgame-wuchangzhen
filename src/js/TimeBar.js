@@ -17,14 +17,18 @@ setInterval(() => {
 //const timeSecond = 5;
 
 //const timer = docuument.querySelector('h1');
-let timeSecond = 60;
+let timeSecond = 70; //setting time to count down from
 
-DOMSelectors.timer.innerHTML = `00:${timeSecond}`; //makes direct changes to .timer div
+displayTime(timeSecond); //set parameter to timeSecond which makes it not read 70
+
+DOMSelectors.timer.innerHTML = `00:${timeSecond}`; //makes direct changes to .timer div (seconds)
 
 const countDown = setInterval(() => {
-  timeSecond--;
-  displayTime(timeSecond);
+  timeSecond--; //will decrease the seconds
+  displayTime(timeSecond); //plays function
   if (timeSecond <= 0 || timeSecond < 1) {
+    //if less than or equal to 0 or less than 1, the interval is cleared 00:00
+    //
     endTime();
     clearInterval(countDown);
   }
@@ -35,7 +39,7 @@ function displayTime(second) {
   const sec = Math.floor(second % 60);
   DomSelectors.timer.innerHTML = `${min < 10 ? '0' : ''}${min}:${
     sec < 10 ? '0' : ''
-  }${sec}`;
+  }${sec}`; // if min is less than 10 then 0, if not then nothing --> same thing with sec
 }
 
 function endTime() {
@@ -46,6 +50,6 @@ function endTime() {
   DOMSelectors.timer.innerHTML = `00:${timeSecond}`;
 } */
 
-displayTime(timeSecond);
+DOMSelectors.timer.displayTime(timeSecond);
 
 export { /* replaceHTMLTest, */ displayTime, endTime };
