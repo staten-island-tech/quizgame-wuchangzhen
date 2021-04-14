@@ -17,7 +17,7 @@ setInterval(() => {
 //const timeSecond = 5;
 
 //const timer = docuument.querySelector('h1');
-let timeSecond = 70; //setting time to count down from
+let timeSecond = 90; //setting time to count down from
 
 displayTime(timeSecond); //set parameter to timeSecond which makes it not read 70
 
