@@ -1,5 +1,5 @@
 import { pickQuestion } from "./Functions";
 
-import { displayTime, endTime } from "./TimeBar";
+import {} from "./TimeBar";
 
 pickQuestion();

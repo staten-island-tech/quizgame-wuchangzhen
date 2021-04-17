@@ -53,5 +53,3 @@ function endTime() {
 }
 
 // displayTime(variables.timeSecond);
-
-export { formatTime, endTime };
