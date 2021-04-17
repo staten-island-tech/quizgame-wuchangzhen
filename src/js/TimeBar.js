@@ -1,4 +1,4 @@
-import { DOMSelectors } from './Dom';
+import { DOMSelectors, variables } from "./Dom";
 
 /* //basically a div over another div thats disappearing over the span of a specified length of time
 
@@ -17,16 +17,17 @@ setInterval(() => {
 //const timeSecond = 5;
 
 //const timer = docuument.querySelector('h1');
-let timeSecond = 90; //setting time to count down from
 
-displayTime(timeSecond); //set parameter to timeSecond which makes it not read 70
+// displayTime(variables.timeSecond); //set parameter to timeSecond which makes it not read 70
 
-DOMSelectors.timer.innerHTML = `00:${timeSecond}`; //makes direct changes to .timer div (seconds)
+DOMSelectors.timer.innerHTML = `00:${variables.timeSecond}`; //makes direct changes to .timer div (seconds)
 
 const countDown = setInterval(() => {
-  timeSecond--; //will decrease the seconds
-  displayTime(timeSecond); //plays function
-  if (timeSecond <= 0 || timeSecond < 1) {
+  variables.timeSecond--; //will decrease the seconds
+
+  DOMSelectors.timer.innerHTML = formatTime(variables.timeSecond); // displays time
+
+  if (variables.timeSecond <= 0 || variables.timeSecond < 1) {
     //if less than or equal to 0 or less than 1, the interval is cleared 00:00
     //
     endTime();
@@ -34,22 +35,23 @@ const countDown = setInterval(() => {
   }
 }, 1000);
 
-function displayTime(second) {
+function formatTime(second) {
   const min = Math.floor(second / 60);
   const sec = Math.floor(second % 60);
-  DOMSelectors.timer.innerHTML = `${min < 10 ? '0' : ''}${min}:${
-    sec < 10 ? '0' : ''
-  }${sec}`; // if min is less than 10 then 0, if not then nothing --> same thing with sec
+  return `${min < 10 ? "0" : ""}${min}:${sec < 10 ? "0" : ""}${sec}`; // if min is less than 10 then 0, if not then nothing --> same thing with sec
 }
 
 function endTime() {
-  DOMSelectors.timer.innerHTML = 'YUR DONE!';
+  DOMSelectors.quizGame.innerHTML = `      <div class="game-over-textbox">
+        <h1 class="game-over-text">Total Time: ${formatTime(
+          variables.totalTimeSecond
+        )}</h1>
+        <h1 class="game-over-text">Total Questions: ${
+          variables.questionCounter - 1
+        }</h1>
+      </div>`;
 }
 
-/* function replaceHTMLTest() {
-  DOMSelectors.timer.innerHTML = `00:${timeSecond}`;
-} */
+// displayTime(variables.timeSecond);
 
-DOMSelectors.timer.displayTime(timeSecond);
-
-export { /* replaceHTMLTest, */ displayTime, endTime };
+export { formatTime, endTime };

@@ -13,10 +13,12 @@ body {
 }
 
 $colors: (
-  light-blue: #81d4fa,
-  light-gray: #e0e0e0,
-  light-red: #ef5350,
-  light-green: #81c784,
+  red: #fc4445,
+  navy-blue: #05386b,
+  green-blue: #379683,
+  light-green: #5cdb95,
+  honeydew-green: #8ee4af,
+  beige: #edf5e1,
 );
 
 @function color($color-name) {

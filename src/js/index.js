@@ -1,17 +1,5 @@
-import {
-  randomInteger,
-  randomIntegerNoDifficulty,
-  threeDigitInt,
-  variables,
-  pickQuestion,
-  addition,
-  subtraction,
-  multiplication,
-  division,
-} from './Functions';
+import { pickQuestion } from "./Functions";
 
-import { /*replaceHTMLTest,*/ displayTime, endTime } from './TimeBar';
-
-import { DOMSelectors } from './Dom';
+import { displayTime, endTime } from "./TimeBar";
 
 pickQuestion();

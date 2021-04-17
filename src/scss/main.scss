@@ -1,13 +1,13 @@
-@import '_variables.scss';
-@import '_mixins.scss';
+@import "_variables.scss";
+@import "_mixins.scss";
 
 body {
   padding: 0;
   margin: 0;
 }
 .header {
-  background-color: color(light-blue);
-  height: 15vh;
+  background-color: color(light-green);
+  height: 10vh;
   min-height: 7rem;
   @include flex-col-center;
 }
@@ -17,7 +17,7 @@ body {
   @include flex-row-center;
 }
 .header-text {
-  color: color(light-gray);
+  color: color(beige);
   margin: 0;
   text-align: center;
   font-size: 5rem;
@@ -37,7 +37,7 @@ body {
   height: $circle-diameter;
   width: $circle-diameter;
   border-radius: 50%;
-  background-color: color(light-green);
+  background-color: color(navy-blue);
 }
 
 .question-number {
@@ -48,6 +48,7 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   font-size: 4rem;
+  color: color(beige);
 }
 
 .question-container {
@@ -78,6 +79,24 @@ body {
   font-size: 6rem;
   font-weight: bold;
 }
+
+.game-over-textbox {
+  background-color: color(navy-blue);
+  height: 30rem;
+  width: 30rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include flex-col-center;
+  justify-content: space-evenly;
+}
+
+.game-over-text {
+  font-size: 2rem;
+  color: color(beige);
+}
+
 /* //This countdown bar takes advantage of a lot of css ex: ::before, ::after that create pseudo-elements
 .timerBar {
   position: absolute;
