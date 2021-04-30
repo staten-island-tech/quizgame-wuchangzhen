@@ -1,4 +1,4 @@
-import { DOMSelectors, variables } from "./Dom";
+import { DOMSelectors, variables } from './Dom';
 
 /* //basically a div over another div thats disappearing over the span of a specified length of time
 
@@ -38,11 +38,11 @@ const countDown = setInterval(() => {
 function formatTime(second) {
   const min = Math.floor(second / 60);
   const sec = Math.floor(second % 60);
-  return `${min < 10 ? "0" : ""}${min}:${sec < 10 ? "0" : ""}${sec}`; // if min is less than 10 then 0, if not then nothing --> same thing with sec
+  return `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`; // if min is less than 10 then 0, if not then nothing --> same thing with sec
 }
 
 function endTime() {
-  DOMSelectors.quizGame.innerHTML = `      <div class="game-over-textbox">
+  DOMSelectors.quizGame.innerHTML = `<div class="game-over-textbox">
         <h1 class="game-over-text">Total Time: ${formatTime(
           variables.totalTimeSecond
         )}</h1>
